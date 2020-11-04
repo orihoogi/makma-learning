@@ -11,7 +11,7 @@ export const ProvideAuth = ({children}) => {
     return <UserContext.Provider value={auth}>{children}</UserContext.Provider>;
 };
 
-const baseUrl = "http://localhost:5000/auth";
+const baseUrl = "/auth";
 
 const useProvideAuth = () => {
     const [user, setUser] = useState(sessionStorage.user && JSON.parse(sessionStorage.user));

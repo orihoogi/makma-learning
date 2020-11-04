@@ -2,7 +2,7 @@ import axios from "axios";
 
 import {useAuth} from "./auth.service";
 
-const baseUrl = "http://localhost:5000/api";
+const baseUrl = "/api";
 
 export const useHttp = url => {
     const fullUrl = `${baseUrl}/${url}`;
