@@ -31,7 +31,7 @@ export const Home = () => {
     }, []);
 
     return (
-        <Grid container direction="row" justify="space-between" alignItems="center" className={classes.page}>
+        <Grid container direction="row" justify="space-between" alignItems="start" className={classes.page}>
             <PhotoList side='left' photos={left} setPhotos={setLeft} />
             Hello
             <PhotoList side='right' photos={right} setPhotos={setRight} />

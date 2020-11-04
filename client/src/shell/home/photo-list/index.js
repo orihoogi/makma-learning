@@ -25,17 +25,6 @@ export const PhotoList = ({photos, setPhotos, side}) => {
   return (
     <List dense className={classes.root}>
       <Grid container direction="column" alignItems="center">
-      {photos.map(photo => (
-          <ListItem key={photo} button>
-            <Grid width="100%" container direction="row" justify="space-between">
-              <img width="200x"
-                src={`static/${user.username}/${side}/${photo}`}
-              />
-              <span>{photo}</span>
-            </Grid>
-          </ListItem>
-        )
-      )}
         <ImagePicker
           extensions={['jpg']}
           dims={{minWidth: 0, maxWidth: 4000, minHeight: 0, maxHeight: 4000}}
@@ -54,6 +43,17 @@ export const PhotoList = ({photos, setPhotos, side}) => {
             Upload
           </Button>
         </ImagePicker>
+        {photos.map(photo => (
+          <ListItem key={photo} button>
+            <Grid width="100%" container direction="row" justify="space-between">
+              <img width="200x"
+                src={`static/${user.username}/${side}/${photo}`}
+              />
+              <span>{photo}</span>
+            </Grid>
+          </ListItem>
+          )
+        )}
       </Grid>
     </List>
   );
