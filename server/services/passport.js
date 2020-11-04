@@ -1,6 +1,7 @@
+require('dotenv').config();
+
 import passport from "passport";
 import User from "../models/user";
-import keys from "../config/keys";
 import {Strategy} from "passport-jwt";
 import {ExtractJwt} from "passport-jwt";
 import LocalStrategy from "passport-local";
@@ -24,7 +25,7 @@ const localLogin = new LocalStrategy(localOptions, (username, password, done) =>
 
 const jwtOptions = {
     jwtFromRequest: ExtractJwt.fromHeader("authorization"),
-    secretOrKey: keys.jwtSecret
+    secretOrKey: process.env.JWT_SECRET
 };
 
 const jwtLogin = new Strategy(jwtOptions, (payload, done) => {

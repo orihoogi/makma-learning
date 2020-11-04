@@ -1,4 +1,3 @@
-
 import {signin, signup} from "../controllers/authentication";
 import "../services/passport";
 import passport from "passport";

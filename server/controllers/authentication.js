@@ -1,11 +1,12 @@
+require('dotenv').config();
+
 import jwt from "jwt-simple";
 import User from "../models/user";
-import keys from "../config/keys";
 
 function tokenForUser (user) {
     const timestamp = new Date().getTime();
 
-    return jwt.encode({ sub: user.id, iat: timestamp }, keys.jwtSecret);
+    return jwt.encode({ sub: user.id, iat: timestamp }, process.env.JWT_SECRET);
 }
 
 export const signin = (req, res) => {

@@ -1,13 +1,15 @@
+require('dotenv').config();
+
 import express from "express";
 import bodyParser from "body-parser";
 import morgan from "morgan";
 import mongoose from "mongoose";
 import cors from "cors";
-import keys from "./config/keys";
 import path from "path";
+
 const app = express();
 
-mongoose.connect(keys.mongoURI);
+mongoose.connect(process.env.MONGO_URL);
 
 app.use(morgan("combined"));
 app.use(cors());

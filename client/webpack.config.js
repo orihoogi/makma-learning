@@ -55,23 +55,23 @@ module.exports = {
     historyApiFallback: true,
     proxy: {
       '/auth': {
-        target: 'http://localhost:5000',
+        target: 'http://localhost:7500',
         changeOrigin: true
       },
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'http://localhost:7500',
         changeOrigin: true
       },
       '/static': {
-        target: 'http://localhost:5000',
+        target: 'http://localhost:7500',
         changeOrigin: true
       },
       '/images': {
-        target: 'http://localhost:5000',
+        target: 'http://localhost:7500',
         changeOrigin: true
       },
       '/socket.io': {
-        target: 'http://localhost:5000',
+        target: 'http://localhost:7500',
         changeOrigin: true
       }
     }
