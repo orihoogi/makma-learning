@@ -1,0 +1,52 @@
+{
+  "name": "exc1",
+  "version": "1.0.0",
+  "description": "First exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint ** --fix",
+    "dev": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orihoogi/react-training-exc1.git"
+  },
+  "author": "Ori Hoogi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/orihoogi/react-training-exc1/issues"
+  },
+  "homepage": "https://github.com/orihoogi/react-training-exc1#readme",
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "axios": "^0.20.0",
+    "classnames": "^2.2.6",
+    "dotenv": "^8.2.0",
+    "fs": "0.0.1-security",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-hook-form": "^6.8.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.3",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.6.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.20.6",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
