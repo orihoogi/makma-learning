@@ -4,7 +4,6 @@ import {useState} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {Grid, Drawer, List, ListItem, ListItemText, ListItemIcon} from "@material-ui/core";
 import {Switch, Route} from "react-router-dom";
-import AboutIcon from "@material-ui/icons/Info";
 import {useHistory, Redirect} from "react-router-dom";
 import classNames from "classnames";
 
@@ -66,10 +65,6 @@ export const Shell = () => {
                             </ListItem>
                         ))
                     }
-                    <ListItem button key="About" onClick={() => goTo({name: "About", url: "/about"})}>
-                        <ListItemIcon><AboutIcon /></ListItemIcon>
-                        <ListItemText primary="About" />
-                    </ListItem>
                 </List>
             </Drawer>
             <Grid className={classNames({
