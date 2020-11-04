@@ -11,8 +11,7 @@ import {useAuth} from '../../../services/auth.service';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
-    maxWidth: 360,
+    flex: 1,
     backgroundColor: theme.palette.background.paper,
   },
 }));
@@ -27,7 +26,7 @@ export const PhotoList = ({photos, setPhotos, side}) => {
       <Grid container direction="column" alignItems="center">
         <ImagePicker
           extensions={['jpg']}
-          dims={{minWidth: 0, maxWidth: 4000, minHeight: 0, maxHeight: 4000}}
+          dims={{minWidth: 0, maxWidth: 40000, minHeight: 0, maxHeight: 40000}}
           onChange={file => {
             http.post('', {side, img: file, name: photos.length + 1})
               .then(() => setPhotos(photos => [...photos, `${photos.length + 1}.jpg`]));

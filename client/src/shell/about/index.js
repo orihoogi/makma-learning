@@ -7,7 +7,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
+    maxWidth: 700,
   },
   media: {
     height: 0,
@@ -27,11 +27,7 @@ export const About = () => {
       <Card className={classes.root}>
         <CardHeader
           title="We are Team 5!"
-          subheader="Developed with love: Shir Maggen, Omri Natanson, Liel Tal, May Eliyahu and Ori Hoogi."
-        />
-        <CardMedia
-          className={classes.media}
-          image="/static/about.jpeg"
+          subheader="Made with love by: Shir Maggen, Omri Natanson, Liel Tal, May Eliyahu and Ori Hoogi."
         />
       </Card>
     </Grid>

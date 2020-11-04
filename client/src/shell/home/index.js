@@ -4,6 +4,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import {Grid} from "@material-ui/core";
 
 import {PhotoList} from "./photo-list";
+import {PhotoTest} from "./photo-test";
 import {useAlert, Alert} from "../../common/alert";
 import {useHttp} from '../../services/http.service';
 
@@ -30,12 +31,12 @@ export const Home = () => {
             .catch(errorAlert.open);
     }, []);
 
-    return (
+    return (<>
         <Grid container direction="row" justify="space-between" alignItems="flex-start" className={classes.page}>
             <PhotoList side='left' photos={left} setPhotos={setLeft} />
-            Hello
+            <PhotoTest />
             <PhotoList side='right' photos={right} setPhotos={setRight} />
-            <Alert alert={errorAlert} message="An error has occured" severity="error"></Alert>
         </Grid>
-    );
+        <Alert alert={errorAlert} message="An error has occured" severity="error"></Alert>
+    </>);
 };

@@ -32,3 +32,19 @@ export const post = (req, res) => {
     fs.writeFileSync(`./images/${req.user.username}/${req.body.side}/${req.body.name}.jpg`, buf);
     res.status(200).send();
 };
+
+export const postTest = (req, res) => {
+    if (!fs.existsSync(`./images`)) {
+        fs.mkdirSync(`./images`);
+    }
+    if (!fs.existsSync(`./images/${req.user.username}`)) {
+        fs.mkdirSync(`./images/${req.user.username}`);
+        fs.mkdirSync(`./images/${req.user.username}/left`);
+        fs.mkdirSync(`./images/${req.user.username}/right`);        
+    }
+
+    let data = req.body.img.replace(/^data:image\/\w+;base64,/, "");
+    let buf = Buffer.from(data, 'base64');
+    fs.writeFileSync(`./images/${req.user.username}/test.jpg`, buf);
+    res.status(200).send();
+};
