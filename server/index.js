@@ -6,6 +6,7 @@ import morgan from "morgan";
 import mongoose from "mongoose";
 import cors from "cors";
 import path from "path";
+import fallback from 'express-history-api-fallback'
 
 const app = express();
 
@@ -22,6 +23,7 @@ import authRoutes from "./routes/authRoutes";
 import photoRoutes from "./routes/photoRoutes";
 authRoutes(app);
 photoRoutes(app);
+app.use(fallback('/', {root: '../client/dist'}));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
