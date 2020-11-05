@@ -55,7 +55,7 @@ export const PhotoList = ({photos, setPhotos, side}) => {
           <ListItem key={photo} button>
             <Grid width="100%" container direction="row" justify="space-between">
               <img width="200x"
-                src={`images/${user.username}/${side}/${photo}`}
+                src={`images/${user.username}/test/${side}/${photo}`}
               />
               <span>{photo}</span>
             </Grid>
