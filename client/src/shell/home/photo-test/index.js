@@ -11,8 +11,11 @@ import {useAuth} from '../../../services/auth.service';
 const useStyles = makeStyles((theme) => ({
   root: {
     flex: 3,
-    minHeight: 400
+    minHeight: 400,
   },
+  image: {
+    maxHeight: '300px'
+  }
 }));
 
 export const PhotoTest = () => {
@@ -37,7 +40,7 @@ export const PhotoTest = () => {
           >
             Upload
           </Button>
-        </ImagePicker> : <><img width="400px" src={`images/${user.username}/test.jpg`} />
+        </ImagePicker> : <><img className={classes.image} src={`images/${user.username}/test.jpg`} />
         <Button
           variant="contained"
           color="primary"
