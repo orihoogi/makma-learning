@@ -16,6 +16,14 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     overflow: 'auto'
   },
+  left: {
+    background: theme.palette.teamA.main,
+    color: theme.palette.buttonColor
+  },
+  right: {
+    background: theme.palette.teamB.main,
+    color: theme.palette.buttonColor
+  }
 }));
 
 export const PhotoList = ({photos, setPhotos, side}) => {
@@ -37,8 +45,7 @@ export const PhotoList = ({photos, setPhotos, side}) => {
         >
           <Button
             variant="contained"
-            color="primary"
-            className={classes.button}
+            className={`${classes.button} ${side === 'left' ? classes.left : classes.right}`}
             startIcon={<CloudUploadIcon />}
           >
             Upload

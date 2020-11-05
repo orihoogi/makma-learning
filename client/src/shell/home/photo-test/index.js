@@ -7,6 +7,7 @@ import { Grid } from '@material-ui/core';
 import { ImagePicker } from 'react-file-picker';
 import {useHttp} from '../../../services/http.service';
 import {useAuth} from '../../../services/auth.service';
+import {TestResult} from './test-result';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const PhotoTest = () => {
   const [uploaded, setUploaded] = useState(false);
+  const [result, setResult] = useState();
   const classes = useStyles();
   const {user} = useAuth();
   const http = useHttp('photo/test');
@@ -45,10 +47,12 @@ export const PhotoTest = () => {
           variant="contained"
           color="primary"
           className={classes.button}
+          onClick={() => http.get('').then(({data}) => setResult(data))}
           startIcon={<CheckIcon />}
         >
           Test
         </Button></>}
+        {result ? <TestResult /> : <></>}
       </Grid>
   );
 };

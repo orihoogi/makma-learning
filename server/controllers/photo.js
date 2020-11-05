@@ -1,5 +1,5 @@
 import fs from 'fs';
-import run from '../services/classify'
+import {run} from '../services/classify'
 
 export const getAllForRight = (req, res) => getAllForSide(req, res, 'right');
 export const getAllForLeft = (req, res) => getAllForSide(req, res, 'left');
@@ -51,5 +51,5 @@ export const postTest = (req, res) => {
 };
 
 export const getTestResults = req => {
-    run();
+    run(req);
 }

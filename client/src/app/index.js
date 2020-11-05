@@ -3,7 +3,7 @@ import React from "react";
 import {useState} from "react";
 import {createMuiTheme, ThemeProvider} from "@material-ui/core/styles";
 import {CssBaseline} from "@material-ui/core";
-import {orange, blue, deepOrange, deepPurple, grey, blueGrey} from "@material-ui/core/colors";
+import {orange, blue, deepOrange, deepPurple, grey, blueGrey, red, green} from "@material-ui/core/colors";
 
 import {AppRouter} from "./router";
 
@@ -13,6 +13,7 @@ import {ProvideAuth} from "../services/auth.service";
 export const App = () => {
     const [isDark, setIsDark] = useState(false);
     const palletType = isDark ? "dark" : "light";
+    const buttonColor = isDark ? "#000" : "#fff";
     const backgroundColor = isDark ? grey[900] : blueGrey[50];
     const mainPrimaryColor = isDark ? orange[500] : blue[500];
     const mainSecondaryColor = isDark ? deepOrange[900] : deepPurple[500];
@@ -20,6 +21,7 @@ export const App = () => {
     const theme = createMuiTheme({
         palette: {
             type: palletType,
+            buttonColor: buttonColor,
             background: {
                 default: backgroundColor
             },
@@ -28,6 +30,12 @@ export const App = () => {
             },
             secondary: {
                 main: mainSecondaryColor
+            },
+            teamA: {
+                main: red[500]
+            },
+            teamB: {
+                main: green[500]
             }
         }
     });
