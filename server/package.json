@@ -9,6 +9,9 @@
     "dev": "nodemon --exec babel-node index.js",
     "start": "node index.js"
   },
+  "nodemonConfig": {
+    "ignore": ["*.json"]
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
