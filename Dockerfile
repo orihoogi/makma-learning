@@ -22,6 +22,10 @@ COPY --from=client /opt/client/dist/ ./client/dist
 COPY server/.env ./server
 
 RUN apt-get update || : && apt-get install python3-pip -y
+RUN pip3 install --upgrade pip
+RUN pip3 install tensorflow==1.13.1
+RUN pip3 install opencv-python
+RUN pip3 install imageai --upgrade
 RUN pip3 install keras==2.2.4
 WORKDIR /opt/app/server
 CMD ["npm", "run", "dev"]

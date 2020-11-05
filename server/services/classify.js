@@ -9,7 +9,7 @@ const options = {
 
 const getOptions = req => {
     console.log(process.cwd())
-    options.args = [`${process.cwd()}/images/${req.user.username}/test.jpg`];
+    options.args = [`${process.cwd()}/images/${req.user.username}/test.jpg`, req.user.username];
 
     return options;
 }
