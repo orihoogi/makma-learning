@@ -47,7 +47,7 @@ export const PhotoTest = () => {
           variant="contained"
           color="primary"
           className={classes.button}
-          onClick={() => http.get('').then(({data}) => setResult(data))}
+          onClick={() => http.get('').then(({data}) => setResult(data.left))}
           startIcon={<CheckIcon />}
         >
           Test
