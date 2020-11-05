@@ -50,6 +50,6 @@ export const postTest = (req, res) => {
     res.status(200).send();
 };
 
-export const getTestResults = req => {
-    run(req);
+export const getTestResults = (req, res) => {
+    run(req, res);
 }
