@@ -15,9 +15,9 @@ const getOptions = req => {
 }
 
 export const run = (req, res) => py.PythonShell.run(`${__dirname}/ScriptsAndML_related/classify_specific_image.py`, getOptions(req), function (err, results) {
-    console.log("wowow")
+    console.log("wowow");
     if (err) res.status(500).send(err);
     // results is an array consisting of messages collected during execution
-    console.log(results[results.length - 1]);
-    res.send(results[results.length - 1]);
+    console.log(results);
+    // res.send(results[results.length - 1]);
 });
