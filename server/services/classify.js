@@ -18,4 +18,5 @@ export const run = (req, res) => py.PythonShell.run(`${__dirname}/ScriptsAndML_r
     if (err) res.status(500).send(err);
     // results is an array consisting of messages collected during execution
     console.log(results);
+    res.send(results);
 });
