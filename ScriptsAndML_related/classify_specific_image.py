@@ -11,7 +11,7 @@ det main():
     prediction.setJsonPath(model_json="../idenprof.json"))
     prediction.setModelTypeAsResNet()
     prediction.loadModel(num_objects=10)
-    predictions, probabilities = prediction.predictImage("./images/${req.user.username}/test.jpg`", result_count=3)
+    predictions, probabilities = prediction.predictImage(sys.argv[1], result_count=3)
 
     # res = None
 
