@@ -13,6 +13,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flex: 1,
     backgroundColor: theme.palette.background.paper,
+    height: '100%',
+    overflow: 'auto'
   },
 }));
 

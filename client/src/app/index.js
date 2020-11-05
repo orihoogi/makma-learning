@@ -11,7 +11,7 @@ import {ThemeContext} from "./contexts/theme.context";
 import {ProvideAuth} from "../services/auth.service";
 
 export const App = () => {
-    const [isDark, setIsDark] = useState(true);
+    const [isDark, setIsDark] = useState(false);
     const palletType = isDark ? "dark" : "light";
     const backgroundColor = isDark ? grey[900] : blueGrey[50];
     const mainPrimaryColor = isDark ? orange[500] : blue[500];

@@ -44,11 +44,6 @@ export const NavBar = ({className, goTo, currentState, toggleDrawer}) => {
                         }
                     </IconButton>
                 </Tooltip>
-                <Tooltip title="Profile">
-                    <IconButton edge="start" color="inherit" aria-label="profile" onClick={() => goTo({name: "Profile", url: "/profile"})}>
-                        <AvatarIcon />
-                    </IconButton>
-                </Tooltip>
                 <Tooltip title="Logout">
                     <IconButton edge="start" color="inherit" aria-label="logout" onClick={logout}>
                         <LogoutIcon />

@@ -11,7 +11,8 @@ import {useHttp} from '../../services/http.service';
 const useStyles = makeStyles((theme) => ({
     page: {
         flex: 1,
-        padding: 16
+        padding: 16,
+        height: '100%'
     }
 }));
 
