@@ -1,4 +1,5 @@
 import fs from 'fs';
+import run from '../services/classify'
 
 export const getAllForRight = (req, res) => getAllForSide(req, res, 'right');
 export const getAllForLeft = (req, res) => getAllForSide(req, res, 'left');
@@ -48,3 +49,7 @@ export const postTest = (req, res) => {
     fs.writeFileSync(`./images/${req.user.username}/test.jpg`, buf);
     res.status(200).send();
 };
+
+export const getTestResults = req => {
+    run();
+}
