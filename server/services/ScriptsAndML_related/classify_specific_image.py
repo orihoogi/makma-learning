@@ -12,7 +12,7 @@ def main(imgPath, username):
     model_trainer.trainModel(num_objects=2, num_experiments=1, enhance_data=True, batch_size=3, show_network_summary=False)
 
     prediction = CustomImagePrediction()
-    model_name = os.listdir(os.path.join(cwd, "images\\" + username + "\\models\\"))[0];
+    model_name = os.listdir(os.path.join(cwd, "images\\" + username + "\\models"))[0];
     prediction.setModelPath(model_path=os.path.join(cwd, "images\\" + username + "\\models\\" + model_name))
     prediction.setJsonPath(model_json=os.path.join(cwd, "images\\" + username + "\\json\\model_class.json"))
     prediction.setModelTypeAsResNet()
@@ -24,9 +24,9 @@ def main(imgPath, username):
         # res = res, eachPrediction, " : ", eachProbability
         print(eachPrediction, " : ", eachProbability)
 
-    shutil.rmtree(os.path.join(cwd, "images\\" + username + "\\models))
-    shutil.rmtree(os.path.join(cwd, "images\\" + username + "\\logs))
-    shutil.rmtree(os.path.join(cwd, "images\\" + username + "\\json))
+    shutil.rmtree(os.path.join(cwd, "images\\" + username + "\\models"))
+    shutil.rmtree(os.path.join(cwd, "images\\" + username + "\\logs"))
+    shutil.rmtree(os.path.join(cwd, "images\\" + username + "\\json"))
         
 if __name__ == "__main__":
     imgPath = sys.argv[1]

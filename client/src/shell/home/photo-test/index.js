@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import CheckIcon from '@material-ui/icons/Check';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import { Grid } from '@material-ui/core';
 import { ImagePicker } from 'react-file-picker';
 import {useHttp} from '../../../services/http.service';
@@ -21,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const PhotoTest = () => {
   const [uploaded, setUploaded] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [result, setResult] = useState();
   const classes = useStyles();
   const {user} = useAuth();
@@ -43,16 +45,18 @@ export const PhotoTest = () => {
             Upload
           </Button>
         </ImagePicker> : <><img className={classes.image} src={`images/${user.username}/test.jpg`} />
-        <Button
+        {!result ? <Button
           variant="contained"
           color="primary"
           className={classes.button}
-          onClick={() => http.get('').then(({data}) => setResult(data.left))}
+          onClick={() => {setLoading(true);http.get('').then(({data}) => {setResult(data.left);setLoading(false)})}}
           startIcon={<CheckIcon />}
         >
           Test
-        </Button></>}
-        {result ? <TestResult /> : <></>}
+        </Button> : <></>}</>
+        }
+        {result ? <TestResult result={result} /> : <></>}
+        {loading ? <CircularProgress /> : <></>}
       </Grid>
   );
 };

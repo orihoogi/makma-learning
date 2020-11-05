@@ -16,8 +16,10 @@ const getOptions = req => {
 export const run = (req, res) => {
     py.PythonShell.run(`${__dirname}/ScriptsAndML_related/classify_specific_image.py`, getOptions(req), function (err, results) {
         if (err) res.status(500).send(err);
-        // results is an array consisting of messages collected during execution
-        console.log(results);
-        res.send({});
+
+        const left = results.find(str => str.startsWith('left')).split(":")[1];
+        const right = results.find(str => str.startsWith('right')).split(":")[1];
+
+        res.send({'left': parseInt(left), 'right': parseInt(right)});
     });
 };
